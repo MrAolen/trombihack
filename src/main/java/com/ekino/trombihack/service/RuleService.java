@@ -16,6 +16,7 @@ public class RuleService {
     private static final Logger logger = LoggerFactory.getLogger(RuleService.class);
 
     public List<User> proceedCommand(String command) {
+        System.out.println("Receive command from user : " + command);
         logger.info("Receive command from user : " + command);
 
         return new ArrayList<>();
