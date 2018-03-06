@@ -1,4 +1,4 @@
-package com.ekino.trombihack.model;
+package com.ekino.trombihack.model.bot;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(
         ignoreUnknown = true
 )
-public class Field extends me.ramswaroop.jbot.core.slack.models.Field {
+public class FieldCustom extends me.ramswaroop.jbot.core.slack.models.Field {
     @JsonProperty("short")
     private boolean shortEnough;
 
