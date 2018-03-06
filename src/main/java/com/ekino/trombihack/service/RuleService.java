@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
@@ -62,21 +61,21 @@ public class RuleService {
         logger.info("Receive command from user : " + command);
 
         if (Pattern.compile(patternTitleUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternLocationUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternProjectUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternPastProjectsUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternProfileUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternPictureUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternCitationUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternXpUser).matcher(command).matches()) {
-            return Arrays.asList(userService.getUserByUsername(""));
+            return Arrays.asList(userService.getUserByName(""));
         } else if (Pattern.compile(patternLocationProject).matcher(command).matches()) {
             return userService.getUserByLocationAndCurrentProject("","");
         } else if (Pattern.compile(patternPeopleProject).matcher(command).matches()) {

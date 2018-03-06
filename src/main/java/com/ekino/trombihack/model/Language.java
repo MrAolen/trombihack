@@ -1,22 +1,22 @@
 package com.ekino.trombihack.model;
 
 public class Language {
-    private String languageName;
-    private String languageLevel;
+    private String name;
+    private String level;
 
-    public String getLanguageLevel() {
-        return languageLevel;
+    public String getLevel() {
+        return level;
     }
 
-    public void setLanguageLevel(String languageLevel) {
-        this.languageLevel = languageLevel;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
-    public String getLanguageName() {
-        return languageName;
+    public String getName() {
+        return name;
     }
 
-    public void setLanguageName(String languageName) {
-        this.languageName = languageName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

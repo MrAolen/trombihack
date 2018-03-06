@@ -1,0 +1,127 @@
+[{
+    "id": "001",
+    "firstName": "Alex",
+    "lastName": "Labonne",
+    "title": "Front end Engeneer - Intern",
+    "hiredAt": "12/02/2018",
+    "location": "Bordeaux",
+    "project": "GiphyApp",
+    "pastProjects": ["GiphyApp"],
+    "slack": "AlexLab",
+    "email": "alex.labonne@ekino.com",
+    "phoneNumber": "8080",
+    "school": "Wild Code School",
+    "pic": "https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png",
+    "experience": "Former trader in the paper industry, I reconvert in IT since September 2017",
+    "technos": ["HTML", "CSS", "SASS", "AngularJS", "React", "Mocha", "NodeJS", "Express", "Sequelize", "SQL"],
+    "quote": "I'd like to die on Mars, just not on impact - Elon Musk",
+    "hobbies":  [{
+            "hobbyName" : "Video Games",
+            "hobbyUrl": "",
+            "hobbyPic": ""
+        },
+        {
+            "hobbyName" : "Photography",
+            "hobbyUrl": "",
+            "hobbyPic": ""
+        },
+        {
+            "hobbyName" : "Music",
+            "hobbyUrl": "",
+            "hobbyPic": ""
+        }]
+    }, {
+    "id": "002",
+    "firstName": "Cécile",
+    "lastName": "Lesgourgues",
+    "title": "Ingénieur Front Junior",
+    "hiredAt": "12/02/2018",
+    "location": "Bordeaux",
+    "project": "Arval",
+    "pastProjects": [],
+    "slack": "cecile.lesgourgues",
+    "email": "cecile.lesgourgues@ekino.com",
+    "phoneNumber": "0686061616",
+    "school": "Wild Code School",
+    "pic": "string",
+    "experience": "",
+    "technos": ["HTML", "CSS", "SASS", "AngularJS", "React", "NodeJS", "Express", "MongoDB"],
+    "quote": "string",
+    "hobbies":  
+        [{"hobbyName" : "yoga",
+        "hobbyUrl": "",
+        "hobbyPic": ""
+         }],
+    "languages": 
+        [{
+            "name" : "english",
+            "level": "professional"
+        }]
+},{
+    "id": "003",
+    "firstName": "Ruben",
+    "lastName": "Desert",
+    "title": "Ingénieur NodeJS",
+    "hiredAt": "05/03/2018",
+    "location": "Paris",
+    "project": "",
+    "pastProjects": ["test"],
+    "slack": "ruben.desert",
+    "email": "ruben.desert@ekino.com",
+    "phoneNumber": "0630313612",
+    "school": "EEMI",
+    "pic": "",
+    "experience": "coucou",
+    "technos": ["NodeJS", "Angular", "PHP", "Go"],
+    "quote": "Done is better than nothing",
+    "hobbies":
+        [{
+            "hobbyName" : "Boxe",
+            "hobbyUrl": "https://fr.wikipedia.org/wiki/Boxe",
+            "hobbyPic": "https://img1.vital.topsante.com/var/vital/storage/images/2/2113/11874-1/Boxe-Floyd-Mayweather-devoile-sa-playlist-d-entrainement_width1024.jpg"
+        }],
+    "languages":
+        [{
+            "name" : "Anglais",
+            "level": "intermediate"
+        }]
+    },{
+        "id": "004",
+        "firstName": "Loïc",
+        "lastName": "L'Hoste",
+        "title": "Consultant Technique Senior",
+        "hiredAt": "05/03/2018",
+        "location": "Levallois",
+        "project": "Hackathon",
+        "pastProjects": [],
+        "slack": "loic.lhoste",
+        "email": "loic.lhoste@ekino.com",
+        "phoneNumber": "0675567945",
+        "school": "CNAM ESCPI",
+        "pic": "https://www.shareicon.net/data/128x128/2016/08/18/809896_people_512x512.png",
+
+        "experience": "I started as a J2EE developer and after I became a project manager. I worked for several IT companies on different project such as customer care and on line reservation.",
+        "technos": ["JAVA", "J2EE", "REST", "ORACLE"],
+        "quote": "Il n&#39;y a que les gens qui aiment rire qui sont sérieux. Les autres se prennent au sérieux.",
+        "hobbies": [{
+                "hobbyName": "Natation",
+                "hobbyUrl": "",
+                "hobbyPic": ""
+            },
+            {
+                "hobbyName": "Music",
+                "hobbyUrl": "",
+                "hobbyPic": ""
+            }],
+        "languages": [{
+                "name": "english",
+                "level": "professionnal"
+            },
+            {
+                "name": "italian",
+                "level": "beginner"
+            }
+        ]
+    }
+]
+  

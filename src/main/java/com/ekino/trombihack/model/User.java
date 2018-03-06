@@ -11,7 +11,7 @@ public class User {
     private String hiredAt;
     private String location;
     private String project;
-    private String pastProjects;
+    private List<String> pastProjects;
     private String slack;
     private String email;
     private String phoneNumber;
@@ -21,7 +21,7 @@ public class User {
     private List<String> technos;
     private String quote;
     private List<Hobby> hobbies;
-    private List<Language> language;
+    private List<Language> languages;
 
     public Integer getId() {
         return id;
@@ -79,11 +79,11 @@ public class User {
         this.project = project;
     }
 
-    public String getPastProjects() {
+    public List<String> getPastProjects() {
         return pastProjects;
     }
 
-    public void setPastProjects(String pastProjects) {
+    public void setPastProjects(List<String> pastProjects) {
         this.pastProjects = pastProjects;
     }
 
@@ -155,15 +155,15 @@ public class User {
         this.hobbies = hobbies;
     }
 
-    public List<Language> getLanguage() {
-        return language;
+    public List<Language> getLanguages() {
+        return languages;
     }
 
     public List<String> getTechnos() {
         return technos;
     }
 
-    public void setLanguage(List<Language> language) {
-        this.language = language;
+    public void setLanguages(List<Language> languages) {
+        this.languages = languages;
     }
 }

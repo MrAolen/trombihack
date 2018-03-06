@@ -1,6 +1,8 @@
 package com.ekino.trombihack.service;
 
+import com.ekino.trombihack.data.DataRepository;
 import com.ekino.trombihack.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,53 +11,50 @@ import java.util.List;
 @Service
 public class UserService {
 
-    public User getUserByUsername(String username) {
-        User user = new User();
-        user.setFirstName("Nicolas");
-        user.setLastName("Gunther");
-        user.setPhoneNumber("0699419169");
-        user.setPic("https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png");
+    @Autowired
+    private DataRepository dataRepository;
 
-        return user;
+    public User getUserByName(String name) {
+        return dataRepository.searchByName(name).get(0);
     }
 
-    public List<User>  getUserByLocationAndCurrentProject(String location, String project) {
-        return new ArrayList<>();
+    public List<User> getUserByLocationAndCurrentProject(String location, String project) {
+        return dataRepository.searchByLocationAndProject(location,project);
     }
 
     public List<User> getUserByCurrentProject(String project) {
-        return new ArrayList<>();
+        return dataRepository.searchByCurrentProject(project);
     }
 
     public List<User> getUserByTitle(String title) {
-        return new ArrayList<>();
+        return dataRepository.searchByTitle(title);
     }
 
     public List<User> getUserByTitleAndLocation(String title, String location) {
-        return new ArrayList<>();
+        return dataRepository.searchByTitleAndLocation(title,location);
     }
 
     public List<User> getUserBySchool(String school) {
-        return new ArrayList<>();
+        return dataRepository.searchBySchool(school);
     }
 
     public List<User> getUserBySchoolAndLocation(String school, String location) {
-        return new ArrayList<>();
+        return dataRepository.searchBySchoolAndLocation(school,location);
     }
 
     public List<User> getUserByLanguage(String language) {
-        return new ArrayList<>();
+        return dataRepository.searchByLanguage(language);
     }
 
     public List<User> getUserByLanguageAndLocation(String language, String location) {
-        return new ArrayList<>();
+        return dataRepository.searchByLanguageAndLocation(language,location);
     }
 
     public List<User> getUserByHobby(String hobby) {
-        return new ArrayList<>();
+        return dataRepository.searchByHobby(hobby);
     }
 
     public List<User> getUserByHobbyAndLocation(String hobby, String location){
-        return new ArrayList<>();
+        return dataRepository.searchByHobbyAndLocation(hobby,location);
     }
 }
