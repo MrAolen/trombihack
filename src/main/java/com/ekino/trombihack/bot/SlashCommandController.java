@@ -58,18 +58,22 @@ public class SlashCommandController {
         Field nameField = new Field();
         nameField.setTitle("Nom");
         nameField.setValue("Gunther");
+        nameField.setShortEnough(true);
 
         Field fornameField = new Field();
         fornameField.setTitle("Prénom");
         fornameField.setValue("Nicolas");
+        fornameField.setShortEnough(true);
 
         Field telField = new Field();
         telField.setTitle("Téléphone");
         telField.setValue("06.99.41.91.69");
+        telField.setShortEnough(true);
 
         Field emailField = new Field();
         emailField.setTitle("Email");
         emailField.setValue("nicolas.gunther@ekino.com");
+        emailField.setShortEnough(true);
 
         Field[] fields = new Field[4];
         fields[0] = nameField;
@@ -79,7 +83,7 @@ public class SlashCommandController {
 
         attachment.setFields(fields);
         attachment.setText("This is the user");
-        attachment.setColor("blue");
+        attachment.setColor("good");
         attachment.setImageUrl("https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png");
         attachment.setTitle("We found a user for you !");
         attachments[0] = attachment;
