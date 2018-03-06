@@ -1,11 +1,10 @@
 package com.ekino.trombihack.bot;
 
-import com.ekino.trombihack.model.User;
+import com.ekino.trombihack.model.Field;
 import com.ekino.trombihack.service.RuleService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.ramswaroop.jbot.core.slack.models.Attachment;
-import me.ramswaroop.jbot.core.slack.models.Field;
 import me.ramswaroop.jbot.core.slack.models.RichMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 public class SlashCommandController {
@@ -74,6 +72,7 @@ public class SlashCommandController {
         emailField.setTitle("Email");
         emailField.setValue("nicolas.gunther@ekino.com");
         emailField.setShortEnough(true);
+
 
         Field[] fields = new Field[4];
         fields[0] = nameField;
