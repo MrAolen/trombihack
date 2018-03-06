@@ -7,6 +7,7 @@ import me.ramswaroop.jbot.core.slack.Bot;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class User {
     private Integer id;
@@ -23,10 +24,10 @@ public class User {
     private String school;
     private String pic;
     private String experience;
-    private Array technos;
+    private ArrayList<String> technos;
     private String quote;
-    private Array hobbies;
-    private Array language;
+    private Hobbies hobbies;
+    private Languages language;
 
     public Integer getId() {
         return id;
@@ -140,11 +141,11 @@ public class User {
         this.experience = experience;
     }
 
-    public Array getTechnos() {
+    public ArrayList<String> getTechnos() {
         return technos;
     }
 
-    public void setTechnos(Array technos) {
+    public void setTechnos(ArrayList technos) {
         this.technos = technos;
     }
 
@@ -156,19 +157,19 @@ public class User {
         this.quote = quote;
     }
 
-    public Array getHobbies() {
+    public Hobbies getHobbies() {
         return hobbies;
     }
 
-    public void setHobbies(Array hobbies) {
+    public void setHobbies(Hobbies hobbies) {
         this.hobbies = hobbies;
     }
 
-    public Array getLanguage() {
+    public Languages getLanguage() {
         return language;
     }
 
-    public void setLanguage(Array language) {
+    public void setLanguage(Languages language) {
         this.language = language;
     }
 }
