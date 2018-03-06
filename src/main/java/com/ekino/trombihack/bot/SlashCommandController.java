@@ -1,11 +1,13 @@
 package com.ekino.trombihack.bot;
 
+import com.ekino.trombihack.service.RuleService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.ramswaroop.jbot.core.slack.models.Attachment;
 import me.ramswaroop.jbot.core.slack.models.RichMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,8 @@ public class SlashCommandController {
 
     @Value("${slashCommandToken}")
     private String slackToken;
+    @Autowired
+    private RuleService ruleService;
 
     @RequestMapping(value = "/trombibot",
             method = RequestMethod.POST,
@@ -39,7 +43,8 @@ public class SlashCommandController {
             return new RichMessage("Sorry! You're not lucky enough to use our slack command.");
         }
 
-        /** build response */
+        ruleService.proceedCommand(command);
+
         RichMessage richMessage = new RichMessage("The is Slash Commander!");
         richMessage.setResponseType("in_channel");
         // set attachments
