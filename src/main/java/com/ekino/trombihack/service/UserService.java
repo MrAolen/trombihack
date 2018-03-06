@@ -10,7 +10,13 @@ import java.util.List;
 public class UserService {
 
     public User getUserByUsername(String username) {
-        return new User();
+        User user = new User();
+        user.setFirstName("Nicolas");
+        user.setLastName("Gunther");
+        user.setPhoneNumber("0699419169");
+        user.setPic("https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png");
+
+        return user;
     }
 
     public List<User>  getUserByLocationAndCurrentProject(String location, String project) {

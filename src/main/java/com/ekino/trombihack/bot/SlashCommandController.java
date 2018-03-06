@@ -1,9 +1,11 @@
 package com.ekino.trombihack.bot;
 
+import com.ekino.trombihack.model.User;
 import com.ekino.trombihack.service.RuleService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.ramswaroop.jbot.core.slack.models.Attachment;
+import me.ramswaroop.jbot.core.slack.models.Field;
 import me.ramswaroop.jbot.core.slack.models.RichMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class SlashCommandController {
@@ -43,14 +47,43 @@ public class SlashCommandController {
             return new RichMessage("Sorry! You're not lucky enough to use our slack command.");
         }
 
-        ruleService.proceedCommand(text);
+        //List<User> user = ruleService.proceedCommand(text);
 
-        RichMessage richMessage = new RichMessage("The is Slash Commander!");
+        RichMessage richMessage = new RichMessage("Résultat de la recherche");
         richMessage.setResponseType("in_channel");
         // set attachments
         Attachment[] attachments = new Attachment[1];
-        attachments[0] = new Attachment();
-        attachments[0].setText("I will perform all tasks for you.");
+
+        Attachment attachment = new Attachment();
+        Field nameField = new Field();
+        nameField.setTitle("Nom");
+        nameField.setValue("Gunther");
+
+        Field fornameField = new Field();
+        fornameField.setTitle("Prénom");
+        fornameField.setValue("Nicolas");
+
+        Field telField = new Field();
+        telField.setTitle("Téléphone");
+        telField.setValue("06.99.41.91.69");
+
+        Field emailField = new Field();
+        emailField.setTitle("Email");
+        emailField.setValue("nicolas.gunther@ekino.com");
+
+        Field[] fields = new Field[4];
+        fields[0] = nameField;
+        fields[1] = fornameField;
+        fields[2] = telField;
+        fields[3] = emailField;
+
+        attachment.setFields(fields);
+        attachment.setText("This is the user");
+        attachment.setColor("blue");
+        attachment.setImageUrl("https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png");
+        attachment.setTitle("We found a user for you !");
+        attachments[0] = attachment;
+
         richMessage.setAttachments(attachments);
 
         // For debugging purpose only
