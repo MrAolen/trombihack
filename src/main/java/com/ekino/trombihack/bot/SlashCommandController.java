@@ -43,7 +43,7 @@ public class SlashCommandController {
             return new RichMessage("Sorry! You're not lucky enough to use our slack command.");
         }
 
-        ruleService.proceedCommand(command);
+        ruleService.proceedCommand(text);
 
         RichMessage richMessage = new RichMessage("The is Slash Commander!");
         richMessage.setResponseType("in_channel");
