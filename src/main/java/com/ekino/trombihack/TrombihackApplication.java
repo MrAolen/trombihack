@@ -11,8 +11,6 @@ public class TrombihackApplication {
 
 		UserService.run();
 
-		User test = UserService.searchByUsername("Ruben");
-
 		SpringApplication.run(TrombihackApplication.class, args);
 	}
 }

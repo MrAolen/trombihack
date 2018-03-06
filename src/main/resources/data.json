@@ -25,5 +25,32 @@
       "languageName" : "Anglais",
       "languageLevel" : "intermediate"
     }
+  },
+  {
+    "id": 2,
+    "firstName": "Ruben",
+    "lastName": "DESERT",
+    "title": "Ingénieur NodeJS",
+    "hiredAt": "05/03/2018",
+    "location": "Paris",
+    "project": "",
+    "pastProjects": "",
+    "slack": "ruben.desert",
+    "email": "ruben.desert@ekino.com",
+    "phoneNumber": "0630313612",
+    "school": "EEMI",
+    "pic": "",
+    "experience": "Etude de fin d'année",
+    "technos": ["NodeJS", "Angular", "PHP", "Go"],
+    "quote": "Done is better than nothing",
+    "hobbies": {
+      "hobbyName" : "Boxe",
+      "hobbyUrl": "https://fr.wikipedia.org/wiki/Boxe",
+      "hobbyPic": "https://img1.vital.topsante.com/var/vital/storage/images/2/2113/11874-1/Boxe-Floyd-Mayweather-devoile-sa-playlist-d-entrainement_width1024.jpg"
+    },
+    "language": {
+      "languageName" : "Anglais",
+      "languageLevel" : "intermediate"
+    }
   }
 ]
