@@ -32,7 +32,7 @@
         }]
     }, {
     "id": "002",
-    "firstName": "Cécile",
+    "firstName": "Cecile",
     "lastName": "Lesgourgues",
     "title": "Ingénieur Front Junior",
     "hiredAt": "12/02/2018",
@@ -87,7 +87,7 @@
         }]
     },{
         "id": "004",
-        "firstName": "Loïc",
+        "firstName": "Loic",
         "lastName": "L'Hoste",
         "title": "Consultant Technique Senior",
         "hiredAt": "05/03/2018",
