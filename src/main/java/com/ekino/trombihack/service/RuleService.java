@@ -77,7 +77,7 @@ public class RuleService {
             return userService.getUserByTitleAndLocation(query[1],concatFromIndexToLast(3,query));
         } else if (Pattern.compile(patternSchool).matcher(command).matches()) {
             System.out.println("Find By school");
-            return userService.getUserBySchool(query[1]);
+            return userService.getUserBySchool(concatFromIndexToLast(1,query));
         } else if (Pattern.compile(patternSchoolLocation).matcher(command).matches()) {
             System.out.println("Find By school and location");
             return userService.getUserBySchoolAndLocation(query[1],concatFromIndexToLast(3,query));

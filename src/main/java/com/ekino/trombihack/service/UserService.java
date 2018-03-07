@@ -35,6 +35,7 @@ public class UserService {
     }
 
     public List<User> getUserBySchool(String school) {
+        System.out.println(school);
         return dataRepository.searchBySchool(school);
     }
 
