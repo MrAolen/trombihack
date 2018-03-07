@@ -58,4 +58,8 @@ public class UserService {
     public List<User> getUserByHobbyAndLocation(String hobby, String location){
         return dataRepository.searchByHobbyAndLocation(hobby,location);
     }
+
+    public List<User> getUserByLocation(String location) {
+        return dataRepository.searchByLocation(location);
+    }
 }

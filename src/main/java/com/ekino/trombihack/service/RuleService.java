@@ -36,6 +36,8 @@ public class RuleService {
     private String patternHobbyLocation;
     @Value("${pattern.user}")
     private String patternUser;
+    @Value("${pattern.location}")
+    private String patternLocation;
 
     @Autowired
     private UserService userService;
@@ -77,6 +79,9 @@ public class RuleService {
         } else if (Pattern.compile(patternHobbyLocation).matcher(command).matches()) {
             System.out.println("Find By hobby and location");
             return userService.getUserByHobbyAndLocation(concatFromIndexToLast(3,query),query[1]);
+        } else if (Pattern.compile(patternLocation).matcher(command).matches()) {
+            System.out.println("Find By location");
+            return userService.getUserByLocation(concatFromIndexToLast(1,query));
         }
         System.out.println("No match found");
         return new ArrayList<>();
