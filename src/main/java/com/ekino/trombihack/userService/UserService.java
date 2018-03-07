@@ -40,7 +40,7 @@ public class UserService {
     public static List<User> searchByLastName(String lastName) {
         List<User> users = getAllUser();
         String lowerCaseLastName = lastName.toLowerCase();
-        return users.stream().filter(e -> e.getLastName().toLowerCase().toLowerCase().equals(lowerCaseLastName)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getLastName().toLowerCase().equals(lowerCaseLastName)).collect(Collectors.toList());
     }
 
     public static List<User> searchByTitle(String title) {
@@ -59,6 +59,11 @@ public class UserService {
         List<User> users = getAllUser();
         String lowerCaseElem = location.toLowerCase();
         return users.stream().filter(e -> e.getLocation().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+    }
+
+    public static List<User> searchByLocation(String location, List<User> data) {
+        String lowerCaseElem = location.toLowerCase();
+        return data.stream().filter(e -> e.getLocation().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchByProject(String project) {
@@ -142,6 +147,29 @@ public class UserService {
         return tempUser;
     }
 
+    public static List<User> searchByHobbyLocation(String hobby, String location) {
+        List<User> tempUser = searchByHobbies(hobby);
+
+        return searchByLocation(location, tempUser);
+    }
+
+    public static List<User> searchByTitleLocation(String title, String location) {
+        List<User> tempUser = searchByTitle(title);
+
+        return searchByLocation(location, tempUser);
+    }
+
+    public static List<User> searchBySchoolLocation(String school, String location) {
+        List<User> tempUser = searchBySchool(school);
+
+        return searchByLocation(location, tempUser);
+    }
+
+    public static List<User> searchByLanguageLocation(String language, String location) {
+        List<User> tempUser = searchByLanguage(language);
+
+        return searchByLocation(location, tempUser);
+    }
 
 
     private static void setAllUser(List<User> Users) {
