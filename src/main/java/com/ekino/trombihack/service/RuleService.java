@@ -59,40 +59,41 @@ public class RuleService {
     public List<User> proceedCommand(String command) {
         System.out.println("Receive command from user : " + command);
         System.out.println(patternUser);
+        String[] query = command.split(" ");
 
         if (Pattern.compile(patternUser).matcher(command).matches()) {
             System.out.println("Find By name");
-            return Arrays.asList(userService.getUserByName(command.split(" ")[1]));
+            return Arrays.asList(userService.getUserByName(query[1]));
         } else if (Pattern.compile(patternLocationProject).matcher(command).matches()) {
             System.out.println("Find By location and current Project");
-            return userService.getUserByLocationAndCurrentProject("","");
+            return userService.getUserByLocationAndCurrentProject(query[1],query[3]);
         } else if (Pattern.compile(patternPeopleProject).matcher(command).matches()) {
             System.out.println("Find By current Project");
-            return userService.getUserByCurrentProject("");
+            return userService.getUserByCurrentProject(query[1]);
         } else if (Pattern.compile(patternTitle).matcher(command).matches()) {
             System.out.println("Find By title");
-            return userService.getUserByTitle("");
+            return userService.getUserByTitle(query[1]);
         } else if (Pattern.compile(patternTitleLocation).matcher(command).matches()) {
             System.out.println("Find By title and location");
-            return userService.getUserByTitleAndLocation("","");
+            return userService.getUserByTitleAndLocation(query[1],query[3]);
         } else if (Pattern.compile(patternSchool).matcher(command).matches()) {
             System.out.println("Find By school");
-            return userService.getUserBySchool("");
+            return userService.getUserBySchool(query[1]);
         } else if (Pattern.compile(patternSchoolLocation).matcher(command).matches()) {
             System.out.println("Find By school and location");
-            return userService.getUserBySchoolAndLocation("","");
+            return userService.getUserBySchoolAndLocation(query[1],query[3]);
         } else if (Pattern.compile(patternLanguage).matcher(command).matches()) {
             System.out.println("Find By language spoken");
-            return userService.getUserByLanguage("");
+            return userService.getUserByLanguage(query[1]);
         } else if (Pattern.compile(patternLanguageLocation).matcher(command).matches()) {
             System.out.println("Find By language and location");
-            return userService.getUserByLanguageAndLocation("","");
+            return userService.getUserByLanguageAndLocation(query[1],query[3]);
         } else if (Pattern.compile(patternHobby).matcher(command).matches()) {
             System.out.println("Find By hobby");
-            return userService.getUserByHobby("");
+            return userService.getUserByHobby(query[1]);
         } else if (Pattern.compile(patternHobbyLocation).matcher(command).matches()) {
             System.out.println("Find By hobby and location");
-            return userService.getUserByHobbyAndLocation("","");
+            return userService.getUserByHobbyAndLocation(query[1],query[3]);
         }
         System.out.println("No match found");
         return new ArrayList<>();
