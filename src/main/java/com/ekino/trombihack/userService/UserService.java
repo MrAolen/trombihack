@@ -31,7 +31,7 @@ public class UserService {
         }
     }
 
-   public static List<User> searchByUsername(String name) {
+    public static List<User> searchByUsername(String name) {
         List<User> users = getAllUser();
         String lowerCaseName = name.toLowerCase();
         return  users.stream().filter(e -> e.getFirstName().toLowerCase().equals(lowerCaseName)).collect(Collectors.toList());
@@ -69,10 +69,17 @@ public class UserService {
 
     public static List<User> searchByPastProject(String project) {
         List<User> users = getAllUser();
+        List<User> tempUser = new ArrayList<>();
         String lowerCaseElem = project.toLowerCase();
-        return users.stream()
-                .filter(e -> e.getPastProjects().equals(lowerCaseElem))
-                .collect(Collectors.toList());
+        for(User user: users) {
+            ArrayList<String> pastProjects = user.getPastProjects();
+            for(String pastProject: pastProjects) {
+                if(pastProject.toLowerCase().equals(lowerCaseElem)) {
+                    tempUser.add(user);
+                }
+            }
+        }
+        return tempUser;
     }
 
     public static List<User> searchBySlack(String slack) {

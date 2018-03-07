@@ -14,7 +14,7 @@ public class TrombihackApplication {
 
 		UserService.run();
 
-		@Nullable List<User> temp = UserService.searchByLanguage("spanish");
+		List<User> temp = UserService.searchByPastProject("axa");
 
 		System.out.println(temp);
 
