@@ -32,8 +32,8 @@
         ],
         "languages":[
             {
-                "languageName" : "english",
-                "languageLevel": "professional"
+                "name" : "english",
+                "level": "professional"
             }
         ]
     },
@@ -130,8 +130,8 @@
         ],
         "languages": [
             {
-                "languageName": "english",
-                "languageLevel": "professionnal"
+                "name": "english",
+                "level": "professionnal"
             },
             {
                 "name": "italian",
