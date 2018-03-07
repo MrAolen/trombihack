@@ -17,7 +17,7 @@ public class User {
     private String hiredAt;
     private String location;
     private String project;
-    private String pastProjects;
+    private ArrayList<String> pastProjects;
     private String slack;
     private String email;
     private String phoneNumber;
@@ -26,8 +26,8 @@ public class User {
     private String experience;
     private ArrayList<String> technos;
     private String quote;
-    private Hobbies hobbies;
-    private Languages language;
+    private Hobbies[] hobbies;
+    private Languages[] languages;
 
     public Integer getId() {
         return id;
@@ -83,14 +83,6 @@ public class User {
 
     public void setProject(String project) {
         this.project = project;
-    }
-
-    public String getPastProjects() {
-        return pastProjects;
-    }
-
-    public void setPastProjects(String pastProjects) {
-        this.pastProjects = pastProjects;
     }
 
     public String getSlack() {
@@ -157,19 +149,27 @@ public class User {
         this.quote = quote;
     }
 
-    public Hobbies getHobbies() {
+    public Hobbies[] getHobbies() {
         return hobbies;
     }
 
-    public void setHobbies(Hobbies hobbies) {
+    public void setHobbies(Hobbies[] hobbies) {
         this.hobbies = hobbies;
     }
 
-    public Languages getLanguage() {
-        return language;
+    public Languages[] getLanguages() {
+        return languages;
     }
 
-    public void setLanguage(Languages language) {
-        this.language = language;
+    public void setLanguages(Languages[] language) {
+        this.languages = language;
+    }
+
+    public ArrayList<String> getPastProjects() {
+        return pastProjects;
+    }
+
+    public void setPastProjects(ArrayList<String> pastProjects) {
+        this.pastProjects = pastProjects;
     }
 }
