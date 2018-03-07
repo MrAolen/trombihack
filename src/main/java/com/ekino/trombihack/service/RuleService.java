@@ -80,7 +80,7 @@ public class RuleService {
             return userService.getUserBySchool(concatFromIndexToLast(1,query));
         } else if (Pattern.compile(patternSchoolLocation).matcher(command).matches()) {
             System.out.println("Find By school and location");
-            return userService.getUserBySchoolAndLocation(query[1],concatFromIndexToLast(3,query));
+            return userService.getUserBySchoolAndLocation(concatFromIndexToLast(3,query),query[1]);
         } else if (Pattern.compile(patternLanguage).matcher(command).matches()) {
             System.out.println("Find By language spoken");
             return userService.getUserByLanguage(query[1]);
