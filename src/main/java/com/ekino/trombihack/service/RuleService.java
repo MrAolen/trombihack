@@ -60,7 +60,7 @@ public class RuleService {
 
     public List<User> proceedCommand(String command) {
         System.out.println("Receive command from user : " + command);
-        logger.info("Receive command from user : " + command);
+        System.out.println(patternUser);
 
         if (Pattern.compile(patternUser).matcher(command).matches()) {
             System.out.println("Find By name");

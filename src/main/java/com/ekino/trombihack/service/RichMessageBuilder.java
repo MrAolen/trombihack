@@ -31,7 +31,6 @@ public class RichMessageBuilder {
         AttachmentCustom attachment = new AttachmentCustom();
         attachment.setColor("#F44336");
         attachment.setText("No user has been found, try another request !");
-        attachment.setImageUrl("https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png");
         attachment.setTitle("Error");
 
         attachments[0] = attachment;
