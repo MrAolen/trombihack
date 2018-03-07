@@ -89,7 +89,7 @@ public class RuleService {
             return userService.getUserByLanguageAndLocation(query[1],concatFromIndexToLast(3,query));
         } else if (Pattern.compile(patternHobby).matcher(command).matches()) {
             System.out.println("Find By hobby");
-            return userService.getUserByHobby(query[1]);
+            return userService.getUserByHobby(concatFromIndexToLast(1,query));
         } else if (Pattern.compile(patternHobbyLocation).matcher(command).matches()) {
             System.out.println("Find By hobby and location");
             return userService.getUserByHobbyAndLocation(query[1],concatFromIndexToLast(3,query));
