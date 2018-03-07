@@ -47,7 +47,7 @@ public class DataRepository {
     }
 
     public List<User> searchByName(String name) {
-        return  users.stream().filter(e -> e.getFirstName().equalsIgnoreCase(name)).collect(Collectors.toList());
+        return  users.stream().filter(e -> e.getFirstName().equalsIgnoreCase(name) || e.getLastName().equalsIgnoreCase(name)).collect(Collectors.toList());
     }
 
     public List<User> searchByLastName(String lastName) {
