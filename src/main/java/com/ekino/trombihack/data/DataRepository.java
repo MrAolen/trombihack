@@ -55,7 +55,7 @@ public class DataRepository {
     }
 
     public List<User> searchByTitle(String title) {
-        return users.stream().filter(e -> e.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getTitle().equalsIgnoreCase(title) || e.getTitle().contains(title)).collect(Collectors.toList());
     }
 
     public List<User> searchByHiredAt(String hiredAt) {
