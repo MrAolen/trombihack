@@ -10,6 +10,7 @@ public class ActionCustom {
     private String text;
     private String type;
     private String value;
+    private String url;
 
     public String getName() {
         return name;
@@ -41,5 +42,13 @@ public class ActionCustom {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

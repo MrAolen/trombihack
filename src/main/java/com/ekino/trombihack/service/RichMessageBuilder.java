@@ -77,6 +77,7 @@ public class RichMessageBuilder {
         actionCustom.setText("Detail");
         actionCustom.setType("button");
         actionCustom.setValue("Detail");
+        actionCustom.setUrl("https://www.google.fr");
 
         ActionCustom[] actions = new ActionCustom[1];
         actions[0] = actionCustom;
