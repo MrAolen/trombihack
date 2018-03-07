@@ -101,7 +101,12 @@ public class RuleService {
     private String concatFromIndexToLast(int index, String[] arrayOfString) {
         String result = "";
         for (int i = index; i < arrayOfString.length; i++) {
-            result += " " + arrayOfString[i];
+            if (i == index) {
+                result += arrayOfString[i];
+            } else {
+                result += " " + arrayOfString[i];
+            }
+
         }
         return result;
     }
