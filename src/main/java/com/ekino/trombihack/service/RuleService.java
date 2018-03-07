@@ -54,7 +54,7 @@ public class RuleService {
             return userService.getUserByLocationAndCurrentProject(query[1],concatFromIndexToLast(3,query));
         } else if (Pattern.compile(patternPeopleProject).matcher(command).matches()) {
             System.out.println("Find By current Project");
-            return userService.getUserByCurrentProject(query[1]);
+            return userService.getUserByCurrentProject(query[2]);
         } else if (Pattern.compile(patternTitle).matcher(command).matches()) {
             System.out.println("Find By title");
             return userService.getUserByTitle(query[1]);
