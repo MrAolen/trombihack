@@ -107,7 +107,7 @@ public class DataRepository {
     }
 
     public List<User> searchByTitleAndLocation(String title, String location) {
-        return searchByLocation(location).stream().filter(e -> e.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
+        return searchByTitle(title).stream().filter(e -> e.getLocation().equalsIgnoreCase(location)).collect(Collectors.toList());
     }
 
     public List<User> searchBySchoolAndLocation(String school, String location) {
