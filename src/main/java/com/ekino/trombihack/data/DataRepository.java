@@ -71,7 +71,7 @@ public class DataRepository {
     }
 
     public List<User> searchByPastProject(String project) {
-        return users.stream().filter(e -> e.getPastProjects().stream().filter(i -> i.equalsIgnoreCase(project)).count() > 0).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getPastProjects().stream().anyMatch(i -> i.equalsIgnoreCase(project))).collect(Collectors.toList());
     }
 
     public List<User> searchBySlack(String slack) {
@@ -95,11 +95,11 @@ public class DataRepository {
     }
 
     public List<User> searchByLanguage(String language) {
-        return users.stream().filter(e -> e.getLanguages().stream().filter(i -> i.getName().equalsIgnoreCase(language)).count() > 0).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getLanguages().stream().anyMatch(i -> i.getName().equalsIgnoreCase(language))).collect(Collectors.toList());
     }
 
     public List<User> searchByHobby(String hobby) {
-        return users.stream().filter(e -> e.getHobbies().stream().filter(i -> i.getHobbyName().equalsIgnoreCase(hobby)).count() > 0).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getHobbies().stream().anyMatch(i -> i.getHobbyName().equalsIgnoreCase(hobby))).collect(Collectors.toList());
     }
 
     public List<User> searchByLocationAndProject(String location, String project) {
