@@ -2,7 +2,6 @@ package com.ekino.trombihack;
 
 import com.ekino.trombihack.user.User;
 import com.ekino.trombihack.userService.UserService;
-import com.sun.istack.internal.Nullable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
