@@ -1,8 +1,10 @@
 package com.ekino.trombihack.bot;
 
+import com.ekino.trombihack.model.User;
 import com.ekino.trombihack.model.bot.ActionCustom;
 import com.ekino.trombihack.model.bot.AttachmentCustom;
 import com.ekino.trombihack.model.bot.FieldCustom;
+import com.ekino.trombihack.service.RichMessageBuilder;
 import com.ekino.trombihack.service.RuleService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 public class SlashCommandController {
@@ -28,6 +32,8 @@ public class SlashCommandController {
     private String slackToken;
     @Autowired
     private RuleService ruleService;
+    @Autowired
+    private RichMessageBuilder richMessageBuilder;
 
     @RequestMapping(value = "/trombibot",
             method = RequestMethod.POST,
@@ -47,59 +53,8 @@ public class SlashCommandController {
             return new RichMessage("Sorry! You're not lucky enough to use our slack command.");
         }
 
-        //List<User> user = ruleService.proceedCommand(text);
-
-        RichMessage richMessage = new RichMessage("Résultat de la recherche");
-        richMessage.setResponseType("in_channel");
-        // set attachments
-        Attachment[] attachments = new Attachment[1];
-
-        AttachmentCustom attachment = new AttachmentCustom();
-        FieldCustom nameField = new FieldCustom();
-        nameField.setTitle("Nom");
-        nameField.setValue("Gunther");
-        nameField.setShortEnough(true);
-
-        FieldCustom fornameField = new FieldCustom();
-        fornameField.setTitle("Prénom");
-        fornameField.setValue("Nicolas");
-        fornameField.setShortEnough(true);
-
-        FieldCustom telField = new FieldCustom();
-        telField.setTitle("Téléphone");
-        telField.setValue("06.99.41.91.69");
-        telField.setShortEnough(true);
-
-        FieldCustom emailField = new FieldCustom();
-        emailField.setTitle("Email");
-        emailField.setValue("nicolas.gunther@ekino.com");
-        emailField.setShortEnough(true);
-
-        FieldCustom[] fields = new FieldCustom[4];
-        fields[0] = nameField;
-        fields[1] = fornameField;
-        fields[2] = telField;
-        fields[3] = emailField;
-
-        ActionCustom actionCustom = new ActionCustom();
-        actionCustom.setName("game");
-        actionCustom.setText("chess");
-        actionCustom.setType("button");
-        actionCustom.setValue("chess");
-
-        ActionCustom[] actions = new ActionCustom[1];
-        actions[0] = actionCustom;
-
-        attachment.setFields(fields);
-        attachment.setActions(actions);
-        attachment.setText("This is the user");
-        attachment.setColor("good");
-        attachment.setImageUrl("https://image.noelshack.com/fichiers/2018/10/2/1520328766-familyguy-4.png");
-        attachment.setTitle("We found a user for you !");
-
-        attachments[0] = attachment;
-
-        richMessage.setAttachments(attachments);
+        List<User> users = ruleService.proceedCommand(text);
+        RichMessage richMessage = richMessageBuilder.buildMessage(users);
 
         // For debugging purpose only
         if (logger.isDebugEnabled()) {
