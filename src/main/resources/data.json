@@ -221,15 +221,15 @@
   },
   {
     "id": "007",
-    "firstName": "YAHYA",
-    "lastName": "BAASSOU",
-    "title": "Ingénieur junior",
+    "firstName": "FRANCOIS",
+    "lastName": "BARRAILLA",
+    "title": "Ingénieur Front",
     "hiredAt": "05/03/2018",
     "location": "Levallois",
-    "project": "Hackathon",
+    "project": "Samsung",
     "pastProjects": [],
-    "slack": "yahya.baassou",
-    "email": "yahya.baassou@ekino.com",
+    "slack": "francois.barrailla",
+    "email": "francois.barrailla@ekino.com",
     "phoneNumber": "0675567945",
     "school": "CNAM ESCPI",
     "pic": "https://www.shareicon.net/data/128x128/2016/08/18/809896_people_512x512.png",
@@ -261,15 +261,15 @@
   },
   {
     "id": "008",
-    "firstName": "YAHYA",
-    "lastName": "BAASSOU",
-    "title": "Ingénieur junior",
+    "firstName": "MARIE-SAINTE",
+    "lastName": "Ludovic",
+    "title": "Consultant technique",
     "hiredAt": "05/03/2018",
     "location": "Levallois",
     "project": "Hackathon",
     "pastProjects": [],
-    "slack": "yahya.baassou",
-    "email": "yahya.baassou@ekino.com",
+    "slack": "ludovic.marie-sainte",
+    "email": "ludovic.marie-sainte@ekino.com",
     "phoneNumber": "0675567945",
     "school": "CNAM ESCPI",
     "pic": "https://www.shareicon.net/data/128x128/2016/08/18/809896_people_512x512.png",
@@ -279,11 +279,6 @@
     "hobbies": [
       {
         "hobbyName": "Natation",
-        "hobbyUrl": "",
-        "hobbyPic": ""
-      },
-      {
-        "hobbyName": "Music",
         "hobbyUrl": "",
         "hobbyPic": ""
       }
@@ -301,15 +296,15 @@
   },
   {
     "id": "009",
-    "firstName": "YAHYA",
-    "lastName": "BAASSOU",
-    "title": "Ingénieur junior",
+    "firstName": "MAZIERE",
+    "lastName": "Benoit",
+    "title": "Ingénieur senior",
     "hiredAt": "05/03/2018",
     "location": "Levallois",
     "project": "Hackathon",
     "pastProjects": [],
-    "slack": "yahya.baassou",
-    "email": "yahya.baassou@ekino.com",
+    "slack": "benoit.maziere",
+    "email": "benoit.maziere@ekino.com",
     "phoneNumber": "0675567945",
     "school": "CNAM ESCPI",
     "pic": "https://www.shareicon.net/data/128x128/2016/08/18/809896_people_512x512.png",
@@ -341,15 +336,15 @@
   },
   {
     "id": "010",
-    "firstName": "YAHYA",
-    "lastName": "BAASSOU",
-    "title": "Ingénieur junior",
-    "hiredAt": "05/03/2018",
+    "firstName": "Nicolas",
+    "lastName": "PRUD'HOMME",
+    "title": "CTO",
+    "hiredAt": "05/03/2012",
     "location": "Levallois",
     "project": "Hackathon",
     "pastProjects": [],
-    "slack": "yahya.baassou",
-    "email": "yahya.baassou@ekino.com",
+    "slack": "nicolas.prudhomme",
+    "email": "nicolas.prudhomme@ekino.com",
     "phoneNumber": "0675567945",
     "school": "CNAM ESCPI",
     "pic": "https://www.shareicon.net/data/128x128/2016/08/18/809896_people_512x512.png",
@@ -357,11 +352,6 @@
     "technos": ["JAVA", "J2EE", "REST", "ORACLE"],
     "quote": "Il n&#39;y a que les gens qui aiment rire qui sont sérieux. Les autres se prennent au sérieux.",
     "hobbies": [
-      {
-        "hobbyName": "Natation",
-        "hobbyUrl": "",
-        "hobbyPic": ""
-      },
       {
         "hobbyName": "Music",
         "hobbyUrl": "",
@@ -374,7 +364,7 @@
         "languageLevel": "professionnal"
       },
       {
-        "languageName": "italian",
+        "languageName": "spanish",
         "languageLevel": "beginner"
       }
     ]

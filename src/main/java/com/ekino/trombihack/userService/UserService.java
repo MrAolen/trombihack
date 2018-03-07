@@ -1,22 +1,25 @@
 package com.ekino.trombihack.userService;
 
+import com.ekino.trombihack.user.Hobbies;
+import com.ekino.trombihack.user.Languages;
 import com.ekino.trombihack.user.User;
 import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserService {
-    private static User[] allUser;
+    private static List<User> allUser;
     public static void run() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            User[] obj = mapper.readValue(new File("/Users/ruben.desert/Documents/workspace/trombihack/src/main/resources/data.json"), User[].class);
+            List<User> obj = mapper.readValue(new File("/Users/ruben.desert/Documents/workspace/trombihack/src/main/resources/data.json"), new TypeReference<List<User>>(){});
             setAllUser(obj);
 
         } catch (JsonGenerationException e) {
@@ -28,99 +31,118 @@ public class UserService {
         }
     }
 
-    public static List<User> searchByUsername(String name) {
-        User[] users = getAllUser();
+   public static List<User> searchByUsername(String name) {
+        List<User> users = getAllUser();
         String lowerCaseName = name.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getFirstName().toLowerCase().equals(lowerCaseName)).collect(Collectors.toList());
+        return  users.stream().filter(e -> e.getFirstName().toLowerCase().equals(lowerCaseName)).collect(Collectors.toList());
     }
 
     public static List<User> searchByLastName(String lastName) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseLastName = lastName.toLowerCase();
-        return Arrays.asList(users).stream().filter(e -> e.getLastName().toLowerCase().toLowerCase().equals(lowerCaseLastName)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getLastName().toLowerCase().toLowerCase().equals(lowerCaseLastName)).collect(Collectors.toList());
     }
 
     public static List<User> searchByTitle(String title) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseTitle = title.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getTitle().toLowerCase().equals(lowerCaseTitle)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getTitle().toLowerCase().equals(lowerCaseTitle)).collect(Collectors.toList());
     }
 
     public static List<User> searchByHiredAt(String hiredAt) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = hiredAt.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getHiredAt().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getHiredAt().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchByLocation(String location) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = location.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getLocation().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getLocation().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchByProject(String project) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = project.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getProject().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getProject().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchByPastProject(String project) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = project.toLowerCase();
-        return  Arrays.stream(users)
+        return users.stream()
                 .filter(e -> e.getPastProjects().equals(lowerCaseElem))
                 .collect(Collectors.toList());
     }
 
     public static List<User> searchBySlack(String slack) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = slack.toLowerCase();
-        return  Arrays.asList(users)
+        return users
                 .stream()
                 .filter(e -> e.getSlack().toLowerCase().equals(lowerCaseElem))
                 .collect(Collectors.toList());
     }
 
     public static List<User> searchByEmail(String email) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = email.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getEmail().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getEmail().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchByPhoneNumber(String phoneNumber) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = phoneNumber.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getPhoneNumber().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getPhoneNumber().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchBySchool(String school) {
-        User[] users = getAllUser();
+        List<User> users = getAllUser();
         String lowerCaseElem = school.toLowerCase();
-        return  Arrays.asList(users).stream().filter(e -> e.getSchool().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getSchool().toLowerCase().equals(lowerCaseElem)).collect(Collectors.toList());
     }
 
     public static List<User> searchById(Integer id) {
-        User[] users = getAllUser();
-        return  Arrays.asList(users).stream().filter(e -> e.getId().equals(id)).collect(Collectors.toList());
+        List<User> users = getAllUser();
+        return  users.stream().filter(e -> e.getId().equals(id)).collect(Collectors.toList());
     }
 
     public static List<User> searchByLanguage(String language) {
-        User[] users = getAllUser();
-        return  Arrays.stream(users).filter(e -> e.getId().toString().toLowerCase().equals(language)).collect(Collectors.toList());
+        List<User> users = getAllUser();
+        List<User> tempUser = new ArrayList<>();
+        for(User user: users) {
+            Languages[] langs = user.getLanguages();
+            for(Languages lang: langs) {
+                if(lang.getLanguageName().toLowerCase().equals(language)) {
+                    tempUser.add(user);
+                }
+            }
+        }
+        return tempUser;
     }
 
-    public static List<User> searchByHobbies(String language) {
-        User[] users = getAllUser();
-        return  Arrays.stream(users).filter(e -> e.getId().toString().toLowerCase().equals(language)).collect(Collectors.toList());
+    public static List<User> searchByHobbies(String hobby) {
+        List<User> users = getAllUser();
+        List<User> tempUser = new ArrayList<>();
+        for(User user: users) {
+            Hobbies[] hobbies = user.getHobbies();
+            for(Hobbies singleHobby: hobbies) {
+                if(singleHobby.getHobbyName().toLowerCase().equals(hobby.toLowerCase())) {
+                    tempUser.add(user);
+                }
+            }
+        }
+        return tempUser;
     }
 
 
 
-    private static void setAllUser(User[] Users) {
+    private static void setAllUser(List<User> Users) {
+        System.out.println();
         allUser = Users;
     }
 
-    private static User[] getAllUser()  {
+    private static List<User> getAllUser()  {
         return allUser;
     }
 }
