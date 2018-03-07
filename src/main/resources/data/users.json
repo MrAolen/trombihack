@@ -29,7 +29,12 @@
             "hobbyName" : "Music",
             "hobbyUrl": "",
             "hobbyPic": ""
-        }]
+        }],
+    "languages":
+    [{
+        "name" : "english",
+        "level": "professional"
+    }]
     }, {
     "id": "002",
     "firstName": "Cecile",
