@@ -132,7 +132,6 @@ public class RichMessageBuilder {
             attachments[i] = attachment;
         }
 
-
         richMessage.setAttachments(attachments);
         return richMessage;
     }
