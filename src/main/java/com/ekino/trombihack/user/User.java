@@ -1,12 +1,5 @@
 package com.ekino.trombihack.user;
 
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import me.ramswaroop.jbot.core.slack.Bot;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class User {

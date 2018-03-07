@@ -1,4 +1,4 @@
-package com.ekino.trombihack.userService;
+package com.ekino.trombihack.service;
 
 import com.ekino.trombihack.user.Hobbies;
 import com.ekino.trombihack.user.Languages;
