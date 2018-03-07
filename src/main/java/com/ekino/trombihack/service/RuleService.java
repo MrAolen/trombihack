@@ -14,8 +14,6 @@ import java.util.regex.Pattern;
 
 @Service
 public class RuleService {
-    private static final Logger logger = LoggerFactory.getLogger(RuleService.class);
-
     @Value("${pattern.title.user}")
     private String patternTitleUser;
     @Value("${pattern.location.user}")
@@ -64,7 +62,7 @@ public class RuleService {
 
         if (Pattern.compile(patternUser).matcher(command).matches()) {
             System.out.println("Find By name");
-            return Arrays.asList(userService.getUserByName("Alex"));
+            return Arrays.asList(userService.getUserByName(command.split(" ")[1]));
         } else if (Pattern.compile(patternLocationProject).matcher(command).matches()) {
             System.out.println("Find By location and current Project");
             return userService.getUserByLocationAndCurrentProject("","");
