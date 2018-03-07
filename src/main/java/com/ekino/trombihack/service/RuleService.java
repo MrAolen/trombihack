@@ -14,22 +14,6 @@ import java.util.regex.Pattern;
 
 @Service
 public class RuleService {
-    @Value("${pattern.title.user}")
-    private String patternTitleUser;
-    @Value("${pattern.location.user}")
-    private String patternLocationUser;
-    @Value("${pattern.project.user}")
-    private String patternProjectUser;
-    @Value("$(pattern.past.projects.user}")
-    private String patternPastProjectsUser;
-    @Value("${pattern.profile.user}")
-    private String patternProfileUser;
-    @Value("${pattern.picture.user}")
-    private String patternPictureUser;
-    @Value("${pattern.citation.user}")
-    private String patternCitationUser;
-    @Value("${pattern.xp.user}")
-    private String patternXpUser;
     @Value("${pattern.location.project}")
     private String patternLocationProject;
     @Value("${pattern.people.project}")
