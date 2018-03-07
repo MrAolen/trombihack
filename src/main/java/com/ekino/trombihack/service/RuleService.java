@@ -92,7 +92,7 @@ public class RuleService {
             return userService.getUserByHobby(concatFromIndexToLast(1,query));
         } else if (Pattern.compile(patternHobbyLocation).matcher(command).matches()) {
             System.out.println("Find By hobby and location");
-            return userService.getUserByHobbyAndLocation(query[1],concatFromIndexToLast(3,query));
+            return userService.getUserByHobbyAndLocation(concatFromIndexToLast(3,query),query[1]);
         }
         System.out.println("No match found");
         return new ArrayList<>();
