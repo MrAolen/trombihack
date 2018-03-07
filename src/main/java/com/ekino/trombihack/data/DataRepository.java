@@ -92,7 +92,7 @@ public class DataRepository {
     }
 
     public List<User> searchById(String id) {
-        return users.stream().filter(e -> e.getId() == Integer.parseInt(id)).collect(Collectors.toList());
+        return users.stream().filter(e -> e.getId().equalsIgnoreCase(id)).collect(Collectors.toList());
     }
 
     public List<User> searchByLanguage(String language) {

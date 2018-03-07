@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private Integer id;
+    private String id;
     private String firstName;
     private String lastName;
     private String title;
@@ -23,11 +23,11 @@ public class User {
     private List<Hobby> hobbies;
     private List<Language> languages;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -77,7 +77,7 @@ public class RichMessageBuilder {
         actionCustom.setText("Detail");
         actionCustom.setType("button");
         actionCustom.setValue("Detail");
-        actionCustom.setUrl("https://www.google.fr");
+        actionCustom.setUrl("http://localhost:3000/profile/" + user.getId());
 
         ActionCustom[] actions = new ActionCustom[1];
         actions[0] = actionCustom;
@@ -122,6 +122,7 @@ public class RichMessageBuilder {
             actionCustom.setText("Detail");
             actionCustom.setType("button");
             actionCustom.setValue("Detail");
+            actionCustom.setUrl("http://localhost:3000/profile/" + users.get(i).getId());
 
             ActionCustom[] actions = new ActionCustom[1];
             actions[0] = actionCustom;
